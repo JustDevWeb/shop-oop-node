@@ -1,0 +1,33 @@
+{
+    "countGoods": 3,
+    "totalSum": 490,
+    "contents": [
+        {
+            "id": "2",
+            "name": "Woman Suit",
+            "price": "260",
+            "img": "./img/products/2.jpg",
+            "quantity": 1
+        },
+        {
+            "id": "1",
+            "name": "Jacket",
+            "price": "150",
+            "img": "./img/products/1.jpg",
+            "quantity": 1
+        },
+        {
+            "id": "3",
+            "name": "Hoodie",
+            "price": "80",
+            "img": "./img/products/3.jpg",
+            "quantity": 1
+        }
+    ],
+    "id": "1657120606083",
+    "shippingAdress": {
+        "country": "Uzbekistan",
+        "state": "Tashkent",
+        "postcode": "100015"
+    }
+}

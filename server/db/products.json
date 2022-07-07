@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Jacket",
+        "description": "There's nothing more passionate than representing your college in a great outdoor kit. The Columbia Men’s Ascender Softshell Jacket is your collegiate answer. ",
+        "img": "./img/products/1.jpg",
+        "price": 150     
+    },
+    {
+        
+        "id": 2,
+        "name": "Woman Suit",
+        "description": "Le Suit apparel boasts modern, clean lines and delivers business luxury at its best. The woman who wears Le Suit is refined, confident, and embraces all that life has to offer. ",
+        "img": "./img/products/2.jpg",
+        "price": 260        
+    },
+    {
+        "id": 3,
+        "name": "Hoodie",
+        "description": " Why fuss with a zipper just pull this medium weight 7.8-oz fleece hoodie over your head and get going. You'll want to wear these comfortable sweats every chance you get.",
+        "img": "./img/products/3.jpg",
+        "price": 80       
+    },
+    {
+        "id": 4,
+        "name": "T-shirt",
+        "description": " Men's Classic Jersey Tee layers well, yet is hefty enough to wear solo. We use ring spun cotton for a softer feel and a higher stitch count for durability. ",
+        "img": "./img/products/4.jpg",
+        "price": 55       
+    }
+    
+]

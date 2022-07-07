@@ -1,0 +1,27 @@
+.footer{
+    background-color: black;
+    padding: 19px 0;
+    &-inner{
+        display: flex;
+        justify-content: space-between;
+        &__rights{
+            color: white;
+        }
+        &__socials{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 130px;
+            
+            .socials-item{
+                font-size: 0.8rem;
+                padding: 0.5em;
+                background-color: white;               
+                color: black;
+                &:hover{
+                    background-color: $maincolor; 
+                }
+            }
+        }
+    }
+}

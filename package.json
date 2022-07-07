@@ -1,0 +1,16 @@
+{
+  "name": "shop-oop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mikhail1JS/shop-oop-node.git"
+  },
+  "author": "",
+  "license": "ISC"
+ 
+}

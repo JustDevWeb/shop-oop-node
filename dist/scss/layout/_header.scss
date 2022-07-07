@@ -1,0 +1,133 @@
+
+.container {
+    @include container-options;
+}
+
+body { font-family:'Lato'; }
+
+.header{    
+    background-color: black;
+    padding: 19px 0;
+    position: sticky;
+    top:0;
+    z-index: 999999;
+
+
+    .mobile-menu{
+        display: none;
+    }
+    
+    
+    .menu-icon{
+        fill: white;
+        &:hover{
+            fill: $maincolor;
+            
+        }
+    }
+    
+        &-flex{
+            display: flex;
+            justify-content: space-between;
+        &__left{
+            display: flex;
+            align-items: flex-end;
+            
+            &_item{
+                text-decoration: none;
+          
+                &:first-child{
+                    margin-right: 41px ;
+                }
+            }
+
+            .item-filter {
+                display: flex;
+                &__area{
+                    visibility: hidden;
+                    opacity: 0;
+                    margin-left:10px;
+                    transition: visibility 0.3s linear,opacity 0.3s linear;;
+                }
+                .visible{
+                    visibility:visible;
+                    opacity:1;
+                }
+                
+            }
+
+        }
+        &__right{
+            display: flex;
+            align-items: flex-end;
+            &_item{
+                text-decoration: none;
+                
+
+                // &:hover .item-cart__inner{
+                //     display: block;
+                // }
+                &:not(:last-child){
+                    margin-right: 33px;
+                }
+            }
+
+            
+            .item-cart{  
+                position: relative; 
+                
+                .active-counter{
+                    visibility: visible;
+                }
+                
+                &__counter{
+                    position: absolute;
+                    visibility: hidden;                    
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    font-size: 12px;
+                    background-color: $maincolor;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    top: -7px;
+                    right: -7px;
+
+                }
+
+                
+            }
+        }
+    }
+
+    @include respond (tablet) {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    @include respond (mobile) {       
+            &-flex{
+                &__left{
+                    .item-filter{
+                        display: none;
+                    }
+                    
+                }
+                &__right{
+                    .item-registration{
+                        display: none;
+
+                    }
+                }
+            }
+        }
+
+       .mobile-menu {
+           display: flex;           
+       }
+            
+
+}
+

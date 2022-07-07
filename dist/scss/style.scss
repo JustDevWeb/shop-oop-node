@@ -1,0 +1,15 @@
+@import 'utilities/mixins';
+@import 'utilities/media-mixins';
+@import 'utilities/variables';
+
+
+@import 'base/normalize';
+@import 'fonts';
+
+@import "layout/header";
+@import "layout/footer";
+@import 'pages/home';
+@import 'pages/cart';
+
+
+
