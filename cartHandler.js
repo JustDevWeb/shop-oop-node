@@ -1,10 +1,9 @@
 import * as fs from "fs";
 import path from "path";
 
-const __dirname = path.resolve("../");
+const __dirname = path.resolve();
 const pathCartProducts = path.join(
   __dirname,
-  "server",
   "db",
   "cartProducts.json"
 );

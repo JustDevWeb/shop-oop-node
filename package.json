@@ -1,16 +1,20 @@
 {
-  "name": "shop-oop",
+  "type": "module",
+  "name": "shop-oop-css",
   "version": "1.0.0",
   "description": "",
-  "main": "server/server.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node server/server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Mikhail1JS/shop-oop-node.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "serve": "nodemon server.js"
   },
   "author": "",
-  "license": "ISC"
- 
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+       "nodemon": "^2.0.16"
+  }
 }
