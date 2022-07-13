@@ -481,7 +481,14 @@ class Validator {
     this._validateForm();
   }
 
-  _validateForm() {    
+  _validateForm() {   
+    let errors = [...document.getElementById(this.form).querySelectorAll(`.${this.errorClass}`)];
+    if(errors.length>0){
+      for (let error of errors){
+        error.remove();
+       } 
+    }
+    
     let formFields = [
       ...document.getElementById(this.form).getElementsByTagName("input"),
     ];

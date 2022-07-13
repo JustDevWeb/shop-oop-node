@@ -1,5 +1,5 @@
 import * as express from "express";
-import { cartHandler, readFile } from "./cartHandler.js";
+import { cartHandler } from "./cartHandler.js";
 import path from "path";
 
 const __dirname = path.resolve();

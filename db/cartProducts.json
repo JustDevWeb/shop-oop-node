@@ -1,6 +1,6 @@
 {
-    "countGoods": 11,
-    "totalSum": 2105,
+    "countGoods": 75,
+    "totalSum": 5625,
     "contents": [
         {
             "id": "1",
@@ -14,7 +14,7 @@
             "name": "T-shirt",
             "price": "55",
             "img": "./img/products/4.jpg",
-            "quantity": 1
+            "quantity": 65
         },
         {
             "id": "2",
