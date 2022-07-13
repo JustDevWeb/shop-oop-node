@@ -2,11 +2,7 @@ import * as fs from "fs";
 import path from "path";
 
 const __dirname = path.resolve();
-const pathCartProducts = path.join(
-  __dirname,
-  "db",
-  "cartProducts.json"
-);
+const pathCartProducts = path.join(__dirname, "db", "cartProducts.json");
 
 export class cartHandler {
   constructor(path, req, res, action) {
@@ -22,51 +18,39 @@ export class cartHandler {
   // Read cartproducts.json file
 
   readFile() {
-    try{
-      fs.readFile(this.path, "utf-8", (err, data) => {
-        if (!err) {
-          this.cart = JSON.parse(data);
-  
-          this.res.send(data);
-        } else {
-          this.res.sendStatus(404, JSON.stringify({ result: 0, text: err }));
-        }
-      });
-    }catch(err){
-      console.log("err in read file")
-    }
-   
+    fs.readFile(this.path, "utf-8", (err, data) => {
+      if (!err) {
+        this.cart = JSON.parse(data);
+
+        this.res.send(data);
+      } else {
+        this.res.sendStatus(404, JSON.stringify({ result: 0, text: err }));
+      }
+    });
   }
 
   // Write the data to cartproducts.json file
 
   writeFile() {
-
-    try {
-      fs.readFile(pathCartProducts, "utf-8", (err, data) => {
-        if (!err) {
-          this.cart = JSON.parse(data);
-          this[this.action]();
-          fs.writeFile(
-            pathCartProducts,
-            JSON.stringify(this.cart, null, 4),
-            (err) => {
-              if (!err) {
-                this.res.send(JSON.stringify(this.cart, null, 4));
-              } else {
-                this.res.sendStatus(404, JSON.stringify({ text: err }));
-              }
+    fs.readFile(pathCartProducts, "utf-8", (err, data) => {
+      if (!err) {
+        this.cart = JSON.parse(data);
+        this[this.action]();
+        fs.writeFile(
+          pathCartProducts,
+          JSON.stringify(this.cart, null, 4),
+          (err) => {
+            if (!err) {
+              this.res.send(JSON.stringify(this.cart, null, 4));
+            } else {
+              this.res.sendStatus(404, JSON.stringify({ text: err }));
             }
-          );
-        } else {
-          res.sendStatus(404, JSON.stringify({ text: err }));
-        }
-      });
-    }catch(err){
-      console.log("error in write file")
-    }
-    
-   
+          }
+        );
+      } else {
+        res.sendStatus(404, JSON.stringify({ text: err }));
+      }
+    });
   }
 
   // Add product to the cart
@@ -110,34 +94,26 @@ export class cartHandler {
 
   //Create the order file
 
-  order() {    
+  order() {
     const orderPath = path.join(__dirname, "server", "db", "orders.json");
-    try{
-      fs.readFile(orderPath,"utf-8",(err,data)=>{
-        if(!err){
-          this.orders = JSON.parse(data);
-          this.orders.allOrders.push(this.data);
-          fs.writeFile(orderPath, JSON.stringify(this.orders, null, 4), (err) => {
-            if (!err) {     
-              this.res.status(200).send(JSON.stringify({text: 'OK'}));      
-              // this.res.sendStatus(200,JSON.stringify({text: 'OK'}));
-            } else {
-              this.res.sendStatus(404, JSON.stringify({ text: err }));
-              console.log("not work");
-            }
-          });
-        }else {
-          res.sendStatus(404, JSON.stringify({ text: err }));
-        }
-      })
-  
-      
-    }catch(err){
-      console.log("error in order")
-    }
 
-   
-    
+    fs.readFile(orderPath, "utf-8", (err, data) => {
+      if (!err) {
+        this.orders = JSON.parse(data);
+        this.orders.allOrders.push(this.data);
+        fs.writeFile(orderPath, JSON.stringify(this.orders, null, 4), (err) => {
+          if (!err) {
+            this.res.status(200).send(JSON.stringify({ text: "OK" }));
+            // this.res.sendStatus(200,JSON.stringify({text: 'OK'}));
+          } else {
+            this.res.sendStatus(404, JSON.stringify({ text: err }));
+            console.log("not work");
+          }
+        });
+      } else {
+        this.res.sendStatus(404, JSON.stringify({ text: err }));
+      }
+    });
   }
 
   // Count and update total sum and number of goods
@@ -153,4 +129,3 @@ export class cartHandler {
     }
   }
 }
-

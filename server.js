@@ -10,8 +10,7 @@ app.use(express.json());
 app.use("/", express.static(path.join(__dirname, "dist")));
 app.use("/api/cart/", router);
 
-app.get("/api/products/", (req, res) => {
-  try{
+app.get("/api/products/", (req, res) => { 
     fs.readFile(
       path.resolve(__dirname, "db", "products.json"),
       "utf-8",
@@ -22,12 +21,7 @@ app.get("/api/products/", (req, res) => {
           res.send(console.log("error in get products"));
         }
       }
-    );
-
-  }catch(err){
-    console.log("error in read file")
-  }
- 
+    );   
 });
 
 const port = process.env.PORT || 3000;
