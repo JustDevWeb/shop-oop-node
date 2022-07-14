@@ -322,8 +322,9 @@ class Cart extends ProductsToCart {
     <a class="order-btn" href="/">CONTINUE SHOPPING</a>
     </div>`;
 
-    cartDiv.innerHTML = renderOrder;   
-      
+    cartDiv.innerHTML = renderOrder;
+    
+    document.querySelector('.order').scrollIntoView();      
 
     // reset cart
 
@@ -460,7 +461,7 @@ class Cart extends ProductsToCart {
   }
 }
 
-// Validator for forms.
+// Forms validator.
 
 class Validator {
   constructor(form) {
@@ -483,7 +484,7 @@ class Validator {
 
   _validateForm() {   
     let errors = [...document.getElementById(this.form).querySelectorAll(`.${this.errorClass}`)];
-    if(errors.length>0){
+    if(errors.length > 0){
       for (let error of errors){
         error.remove();
        } 
