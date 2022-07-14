@@ -37,6 +37,7 @@
        color: white;
        font-size: 16px;
        background-color: $maincolor;
+       width: 100%;
        &:active{
         background-color: white;
         color: black;
@@ -240,12 +241,7 @@
 
     &-info{
       width: 100%;
-      margin-top: 48px;
-      &__checkout{
-        .checkout-btn{
-          width: 100%;
-        }
-      }
+      margin-top: 48px;     
     }  
     .cart-items-section{
       width:100%;
