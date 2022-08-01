@@ -324,7 +324,7 @@ class Cart extends ProductsToCart {
 
     cartDiv.innerHTML = renderOrder;
     
-    document.querySelector('.order').scrollIntoView();      
+    document.querySelector('body').scrollIntoView();      
 
     // reset cart
 
@@ -360,8 +360,7 @@ class Cart extends ProductsToCart {
 
     }else{
       const emptyCart = `<div class="empty-cart"><p>Cart is empty :(</p></div>`;
-      block.insertAdjacentHTML('beforeend',emptyCart);
-      console.log('empty');
+      block.insertAdjacentHTML('beforeend',emptyCart);     
       subPrice.textContent = `$${this.goods.totalSum}`;
       grandTotal.textContent = `$${this.goods.totalSum}`;
   
@@ -386,9 +385,7 @@ class Cart extends ProductsToCart {
       if (validateForm.valid) {
         this.order = Object.assign({}, this.goods);
         this.order["id"] = new Date().valueOf().toString();
-        this.order["shippingAdress"] = validateForm.data;
-        console.log(this.order);
-        console.log(this.goods);
+        this.order["shippingAdress"] = validateForm.data;       
         this.createOrder(this.order);
       }
     });

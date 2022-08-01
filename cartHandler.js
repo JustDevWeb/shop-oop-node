@@ -95,7 +95,7 @@ export class cartHandler {
   //Create the order file
 
   order() {
-    const orderPath = path.join(__dirname, "server", "db", "orders.json");
+    const orderPath = path.join(__dirname, "db", "orders.json");
 
     fs.readFile(orderPath, "utf-8", (err, data) => {
       if (!err) {
